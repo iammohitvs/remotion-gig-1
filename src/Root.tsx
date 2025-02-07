@@ -1,14 +1,13 @@
 import "./index.css";
 import { Composition } from "remotion";
-import { HelloWorld, myCompSchema } from "./HelloWorld";
-import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import Chat from "./Chat/Chat";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Composition
+      {/* <Composition
         // You can take the "id" to render a video:
         // npx remotion render src/index.ts <id> out/video.mp4
         id="HelloWorld"
@@ -26,10 +25,10 @@ export const RemotionRoot: React.FC = () => {
           logoColor1: "#91EAE4",
           logoColor2: "#86A8E7",
         }}
-      />
+      /> */}
 
       {/* Mount any React component to make it show up in the sidebar and work on it individually! */}
-      <Composition
+      {/* <Composition
         id="OnlyLogo"
         component={Logo}
         durationInFrames={150}
@@ -41,6 +40,15 @@ export const RemotionRoot: React.FC = () => {
           logoColor1: "#91dAE2" as const,
           logoColor2: "#86A8E7" as const,
         }}
+      /> */}
+
+      <Composition
+        id="messages"
+        component={Chat}
+        fps={30}
+        width={1078}
+        height={2400}
+        durationInFrames={90}
       />
     </>
   );
